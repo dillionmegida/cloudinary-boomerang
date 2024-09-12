@@ -12,18 +12,18 @@ const cld = new Cloudinary({
 
 const myVideo = cld.video("demo/moving-car")
 
+// create a preview
+myVideo.videoEdit(
+  preview().duration(3)
+)
+
 // Apply affects to video
 myVideo.effect(boomerang())
 myVideo.resize(scale().width(1000))
 
 // trim the video
-myVideo.videoEdit(
-  trim().startOffset(0).endOffset(4)
-)
-
-// create a preview
 // myVideo.videoEdit(
-//   preview().duration(3)
+//   trim().startOffset(0).endOffset(4)
 // )
 
 // Get the URL of the video
